@@ -11,6 +11,8 @@ This a web page that shows whether a channel is currently streaming on Twitch TV
 
 I'll be using APIs to get the job done.  
 
+You can take a look at the working site by clicking [here](https://twitchcheck-6bdaa.firebaseapp.com)   
+
 You can drop me a mail at akashgajjar8@gmail.com for any suggestions or queries.  
 
 Peace  
