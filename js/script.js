@@ -19,14 +19,21 @@ function getStreamers() {
         if (data.stream == null) onoff = "offline";
         else onoff = "online";
         link = "https://www.twitch.tv/" + strm;
-        if(status.indexOf("Closed") != -1) status = "N/A";
-        else if(onoff=="offline") status = "offline";
+        if (status.indexOf("Closed") != -1) {
+          status = "N/A";
+          logo = "https://dummyimage.com/100x100/686cf0/000000.png&text=N/A";
+        } else if (onoff == "offline") status = "offline";
+        if (logo == null) logo = "https://dummyimage.com/100x100/000/fff.png&text=LOGO";
         html = "<div class = 'row result " +
-          onoff + " " + strm + "'><img class='col-md-4 image img-circle img-responsive' src='" +
-          logo + "' alt='Image not Available' ><a class = 'col-md-4 link' target = '_blank' href = '" +
+          onoff + " " + strm + "'><div class='col-md-4 divimg'><img class='image img-circle img-responsive' src='" +
+          logo + "' alt='Image not Available' ></div><a style='text-decoration:none' class = 'col-md-4 link' target = '_blank' href = '" +
           link + "'>" + strm + "</a><span class='col-md-4 description hidden-xs'>" +
           status + "</span></div>";
         $(".mainresults").append(html);
+        if(strm=="freecodecamp"){
+          var fcchtml = "<p class='fccp'><a style='text-decoration:none' target = '_blank' href = 'https://www.twitch.tv/freecodecamp'>FreeCodeCamp is " +status +"!</p>";
+          $(".fccstatus").append(fcchtml);
+        }
       });
 
     });
@@ -36,23 +43,7 @@ function getStreamers() {
 
 getStreamers();
 
-
-$(".selector").click(function() {
-  $(".selector").removeClass("active");
-  $(this).addClass("active");
-  var status = $(this).attr('id');
-  if (status === "all") {
-    $(".online, .offline").removeClass("hidden");
-  } else if (status === "online") {
-    $(".online").removeClass("hidden");
-    $(".offline").addClass("hidden");
-  } else {
-    $(".offline").removeClass("hidden");
-    $(".online").addClass("hidden");
-  }
-});
-
-$(".selector").hover(function () {
+$(".selector").hover(function() {
   $(".selector").removeClass("active");
   $(this).addClass("active");
   var status = $(this).attr('id');
