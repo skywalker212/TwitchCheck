@@ -5,18 +5,26 @@
   margin-top: 40px;
 }
 
+body{
+  font-family: monospace
+}
+
+.btn-outline-danger{
+  border: none !important;
+}
+
 .list {
   list-style-type: none;
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .all, .nonline, .noffline {
-  display: inline-block;
   float: left;
   width: calc(100%/3);
   height: 50px;
   font-size: 20px;
-  font-family: 'Roboto';
   line-height: 50px;
   background-color: rgb(199, 199, 199);
   color: rgb(0, 0, 0);
@@ -33,7 +41,6 @@
 
 .noffline {
   border-radius: 0px 20px 20px 0px;
-  margin-top: -20px
 }
 
 .nevigator {
@@ -41,7 +48,6 @@
   width: 60%;
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 40px;
 }
 
 .fccp{
@@ -49,7 +55,6 @@
   font-size: 20px;
   font-weight: bold;
   font-style: italic;
-  font-family: 'Roboto';
   margin: 20px 0px 30px 0px;
   color: rgb(9, 0, 179);
 }
@@ -63,16 +68,26 @@
 
 .link {
   display: inline-block;
+  margin: auto;
   font-size: 20px;
   font-weight: bold;
-  font-family: 'Roboto';
+}
+
+.add-streamer{
+  display: inline;
+}
+
+.ver-cen{
+  display: flex;
+  justify-content: center;
 }
 
 .result {
   height: 80px;
   text-align: center;
-  line-height: 80px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin-top: 10px;
 }
 
@@ -81,18 +96,17 @@
 }
 
 .image {
-  height: 50px;
+  height: 60px;
   display: inline-block;
+  border-radius: 20px;
   margin: auto;
 }
 
 .description {
   height: 80px;
-  overflow: auto;
-  font-size: 20px;
-  font-family: 'Roboto';
-  line-height: 80px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: rgb(233, 66, 66);
 }
 
@@ -104,4 +118,19 @@
 .offline {
   background-color: rgb(185, 185, 185);
   border-radius: 10px;
+}
+
+.form-wrapper{
+  margin: 10px 0;
+}
+
+.delete-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:active{
+  outline: none;
 }
